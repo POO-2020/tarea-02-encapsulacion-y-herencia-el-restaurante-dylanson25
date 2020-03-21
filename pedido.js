@@ -43,7 +43,7 @@ export default class Pedido {
 
     this.elementosPedidos.forEach(elemento => {
       costoTotal =
-        costoTotal + elemento.cantidad * elemento.producto.precio.valor;
+        costoTotal + elemento.cantidad * elemento.getPrecioEP();
     });
 
     return costoTotal;

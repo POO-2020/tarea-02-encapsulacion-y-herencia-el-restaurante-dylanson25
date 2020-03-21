@@ -10,7 +10,12 @@ export default class Producto {
     this._nombre = nombre;
     this._precio = precio;
   }
-
+  getNombreProducto(){
+    return this._nombre
+  }
+  getPrecioP(){
+    return this._precio.getValor()
+  }
   getDescripcion() {
     let descripcion = `${this._nombre}  ${this._precio.getPrecio()}`;
 

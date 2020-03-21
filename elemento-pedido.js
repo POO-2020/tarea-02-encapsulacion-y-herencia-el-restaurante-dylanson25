@@ -11,11 +11,13 @@ export default class ElementoPedido {
     this._cantidad = cantidad;
     this._producto = producto;
   }
-
+  getPrecioEP(){
+    return this._producto.getPrecioP()
+  }
   getDescripcion() {
-    let costoTotal = new Precio(this.cantidad * this._producto.precio.valor);
+    let costoTotal = new Precio(this._cantidad * this._producto.getPrecioP());
     return `${this._cantidad} x ${
-      this._producto.nombre
+      this._producto.getNombreProducto()
     } ${costoTotal.getPrecio()}`;
   }
 }

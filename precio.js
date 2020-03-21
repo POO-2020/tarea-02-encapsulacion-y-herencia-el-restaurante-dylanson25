@@ -6,7 +6,9 @@ export default class Precio {
   constructor(valor) {
     this._valor = valor;
   }
-
+  getValor(){
+    return this._valor
+  }
   getPrecio() {
     return this._valor.toLocaleString('en-US', {
       style: 'currency',
