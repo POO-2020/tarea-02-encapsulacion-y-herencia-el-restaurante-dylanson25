@@ -33,8 +33,13 @@ class Main {
     this.elemento3 = new ElementoPedido(3, this.producto);
 
     this.cliente = new Cliente('Juan Pérez Díaz', this.direccion, 3124563256);
-
-    this.pedido = new Pedido(this.fecha, this.tiempo1, this.cliente);
+    let ped_1 = {
+      fecha: this.fecha,
+      hora: this.tiempo1,
+      cliente:this.cliente
+    }
+    this.pedido = new Pedido(ped_1)
+    //this.pedido = new Pedido(this.fecha, this.tiempo1, this.cliente);
     this.pedido.agregarElemento(this.elemento);
     this.pedido.agregarElemento(this.elemento2);
     this.pedido.agregarElemento(this.elemento3);
