@@ -36,7 +36,8 @@ class Main {
     let ped_1 = {
       fecha: this.fecha,
       hora: this.tiempo1,
-      cliente:this.cliente
+      cliente:this.cliente,
+      numeroPedido: 3232374
     }
     this.pedido = new Pedido(ped_1)
     //this.pedido = new Pedido(this.fecha, this.tiempo1, this.cliente);
@@ -89,10 +90,19 @@ class Main {
     console.log(this.pedido.getCostoTotal());
     this.pedido.listarElementos();
   }
+  probarRestaurante(){
+    let res_1 = {
+      nombre: 'Pizza Benis',
+      telefono: 3121319198,
+      direccion: 'av.siempre viva'
+    }
+    this.restaurante = new Restaurante(res_1)
+  }
 }
 
 let app = new Main();
 
+/*
 app.probarFecha();
 app.probarTiempo();
 app.probarDireccion();
@@ -101,3 +111,4 @@ app.probarProducto();
 app.probarElementoPedido();
 app.probarCliente();
 app.probarPedido();
+*/

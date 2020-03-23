@@ -8,30 +8,62 @@ export default class Restaurante {
    * @param {number} telefono
    * @param {Direccion} dirección
    */
-  constructor(nombre, telefono, dirección) {
-    this.nombre = nombre;
-    this.telefono = telefono;
-    this.dirección = dirección;
-    this.productos = new Array();
-    this.pedidos = new Array();
+  constructor({ nombre, telefono, dirección }) {
+    this._nombre = nombre;
+    this._telefono = telefono;
+    this._dirección = dirección;
+    this._productos = new Array();
+    this._pedidos = new Array();
   }
+  registrar(pedido) {
+    if (this.buscarPedido(pedido) === undefined) {
+      this._pedidos.push(pedido);
+      return true;
+    }
 
+    return false;
+  }
+  eliminarPedido(pedido) {
+    let indice = this.buscarPedido(pedido);
+
+    if (indice < 0) return false;
+
+
+    this._pedidos.splice(indice, 1);
+
+    return true;
+  }
+  actualizarPedido(pedido, nuevoPedido) {
+    let indice = this.buscarPedido(pedido);
+
+    if (indice < 0) return false;
+
+
+    this._pedidos.splice(indice, 1, nuevoPedido);
+
+    return true;
+  }
+  buscarPedido(pedido) {
+    let resultado = this._pedidos.findIndex(e => e.esIgualA(pedido));
+
+    return resultado;
+  }
   registrarProductos(producto) {
-    this.productos.push(producto);
+    this._productos.push(producto);
   }
 
   listarProductos() {
-    this.productos.forEach(producto => {
+    this._productos.forEach(producto => {
       console.log(`${producto.getDescripcion()}`);
     });
   }
 
   registrarPedido(pedido) {
-    this.pedidos.push(pedido);
+    this._pedidos.push(pedido);
   }
 
   listarPedido() {
-    this.pedidos.forEach(pedido => {
+    this._pedidos.forEach(pedido => {
       console.log(`${pedido.getDescripcion()}`);
     });
   }
