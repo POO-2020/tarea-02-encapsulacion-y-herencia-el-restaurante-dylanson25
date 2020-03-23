@@ -15,8 +15,8 @@ export default class Restaurante {
     this._productos = new Array();
     this._pedidos = new Array();
   }
-  registrar(pedido) {
-    if (this.buscarPedido(pedido) === undefined) {
+  registrarPedido(pedido) {
+    if (this.buscarPedido(pedido) === -1) {
       this._pedidos.push(pedido);
       return true;
     }
@@ -58,13 +58,10 @@ export default class Restaurante {
     });
   }
 
-  registrarPedido(pedido) {
-    this._pedidos.push(pedido);
-  }
-
   listarPedido() {
     this._pedidos.forEach(pedido => {
-      console.log(`${pedido.getDescripcion()}`);
+      pedido.getDescripcion();
     });
+    console.log('entra')
   }
 }

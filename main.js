@@ -33,18 +33,38 @@ class Main {
     this.elemento3 = new ElementoPedido(3, this.producto);
 
     this.cliente = new Cliente('Juan Pérez Díaz', this.direccion, 3124563256);
+    this.cliente2 = new Cliente('Juana Arco Díaz', this.direccion, 445566);
+    this.cliente3 = new Cliente('Juan Ramillo Guzman', this.direccion, 998845098);
+
     let ped_1 = {
       fecha: this.fecha,
       hora: this.tiempo1,
-      cliente:this.cliente,
-      numeroPedido: 3232374
+      cliente: this.cliente,
+      numeroPedido: 1
     }
-    this.pedido = new Pedido(ped_1)
+    let ped_2 = {
+      fecha: this.fecha,
+      hora: this.tiempo1,
+      cliente: this.cliente2,
+      numeroPedido: 2
+    }
+    let ped_3 = {
+      fecha: this.fecha,
+      hora: this.tiempo1,
+      cliente: this.cliente3,
+      numeroPedido: 3
+    }
+    this.pedido1 = new Pedido(ped_1)
+    this.pedido2 = new Pedido(ped_2)
+    this.pedido3 = new Pedido(ped_3)
     //this.pedido = new Pedido(this.fecha, this.tiempo1, this.cliente);
-    this.pedido.agregarElemento(this.elemento);
-    this.pedido.agregarElemento(this.elemento2);
-    this.pedido.agregarElemento(this.elemento3);
+    this.pedido1.agregarElemento(this.elemento);
+    this.pedido2.agregarElemento(this.elemento2);
+    this.pedido3.agregarElemento(this.elemento3);
+    this.pedido3.agregarElemento(this.elemento);
   }
+
+
 
   probarFecha() {
     console.log(this.fecha.getAños());
@@ -90,18 +110,25 @@ class Main {
     console.log(this.pedido.getCostoTotal());
     this.pedido.listarElementos();
   }
-  probarRestaurante(){
+  probarRestaurante() {
     let res_1 = {
       nombre: 'Pizza Benis',
       telefono: 3121319198,
       direccion: 'av.siempre viva'
     }
     this.restaurante = new Restaurante(res_1)
+   
+    console.log(this.restaurante.registrarPedido(this.pedido1))
+    console.log(this.restaurante.registrarPedido(this.pedido1))
+    console.log(this.restaurante.registrarPedido(this.pedido3))
+    this.restaurante.listarPedido()
+  
+    
   }
 }
 
 let app = new Main();
-
+app.probarRestaurante()
 /*
 app.probarFecha();
 app.probarTiempo();

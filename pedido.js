@@ -18,6 +18,9 @@ export default class Pedido {
     this._numeroPedido = numeroPedido;
     this._elementosPedidos = new Array();
   }
+  getDescripcion(){
+   return `${this._cliente} con numero de pedido ${this.getNumeroPedido}`  
+  }
   getNumeroPedido(){
     return this._numeroPedido
   }
