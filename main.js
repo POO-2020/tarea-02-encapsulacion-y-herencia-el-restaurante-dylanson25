@@ -119,7 +119,7 @@ class Main {
     this.restaurante = new Restaurante(res_1)
    
     console.log(this.restaurante.registrarPedido(this.pedido1))
-    console.log(this.restaurante.registrarPedido(this.pedido1))
+    console.log(this.restaurante.registrarPedido(this.pedido2))
     console.log(this.restaurante.registrarPedido(this.pedido3))
     this.restaurante.listarPedido()
   

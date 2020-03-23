@@ -6,15 +6,17 @@ export default class Cliente {
    * @param {number} telefono Número de teléfonodel cliente
    */
   constructor(nombre, direccion, telefono) {
-    this.direccion = direccion;
-    this.nombre = nombre;
-    this.telefono = telefono;
+    this._direccion = direccion;
+    this._nombre = nombre;
+    this._telefono = telefono;
   }
-
+  getNombre(){
+    return this._nombre
+  }
   getPerfil() {
-    let perfil = `${this.nombre}, ${
-      this.telefono
-    }, ${this.direccion.getFormatoCorto()}`;
+    let perfil = `${this._nombre}, ${
+      this._telefono
+    }, ${this._direccion.getFormatoCorto()}`;
 
     return perfil;
   }

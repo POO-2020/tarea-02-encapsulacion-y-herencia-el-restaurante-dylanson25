@@ -54,14 +54,14 @@ export default class Restaurante {
 
   listarProductos() {
     this._productos.forEach(producto => {
-      console.log(`${producto.getDescripcion()}`);
+      producto.getDescripcion()
     });
   }
 
   listarPedido() {
     this._pedidos.forEach(pedido => {
-      pedido.getDescripcion();
+      console.log(pedido.getDescripcion());
     });
-    console.log('entra')
+    
   }
 }
