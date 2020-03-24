@@ -13,6 +13,12 @@ export default class Cliente {
   getNombre(){
     return this._nombre
   }
+  getDireccion(){
+    return this._direccion
+  }
+  getTelefono(){
+    return this._telefono
+  }
   getPerfil() {
     let perfil = `${this._nombre}, ${
       this._telefono

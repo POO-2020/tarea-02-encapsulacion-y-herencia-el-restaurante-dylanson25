@@ -7,6 +7,7 @@ import Fecha from './fecha.js';
 import Tiempo from './tiempo.js';
 import Cliente from './cliente.js';
 import Direccion from './direccion.js';
+import Frecuente from './clienteFrecuente.js';
 
 class Main {
   constructor() {
@@ -62,6 +63,17 @@ class Main {
     this.pedido2.agregarElemento(this.elemento2);
     this.pedido3.agregarElemento(this.elemento3);
     this.pedido3.agregarElemento(this.elemento);
+    
+    this.fecha2 = new Fecha(20, 11, 2020);
+    this.direccion = new Direccion('Av. Universidad', 333, 0, 'Las Víboras', 28040, 'Colima', 'Colima'); 
+    let frec_1 = {
+      numeroCliente: 20165012, 
+      fechaRegistro: this.fecha2, 
+      nombre: `Dylan Villarreal Toscano`, 
+      direccion: this.direccion, 
+      telefono: 3121319198
+     }
+     this.frecuente = new Frecuente(frec_1)
     
   }
 
@@ -128,16 +140,19 @@ class Main {
     console.log(this.restaurante.actualizarPedido(this.pedido2, this.pedido3))
     this.restaurante.listarPedido()
   }
+  probarFrecuente(){
+    console.log(this.frecuente.getPerfil())
+  }
 }
 
 let app = new Main();
-app.probarRestaurante()
-
-app.probarFecha();
-app.probarTiempo();
-app.probarDireccion();
-app.probarPrecio();
-app.probarProducto();
-app.probarElementoPedido();
-app.probarCliente();
-app.probarPedido();
+// app.probarRestaurante()
+app.probarFrecuente()
+// app.probarFecha();
+// app.probarTiempo();
+// app.probarDireccion();
+// app.probarPrecio();
+// app.probarProducto();
+// app.probarElementoPedido();
+// app.probarCliente();
+// app.probarPedido();
