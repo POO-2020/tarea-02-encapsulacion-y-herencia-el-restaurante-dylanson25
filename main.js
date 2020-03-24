@@ -62,6 +62,7 @@ class Main {
     this.pedido2.agregarElemento(this.elemento2);
     this.pedido3.agregarElemento(this.elemento3);
     this.pedido3.agregarElemento(this.elemento);
+    
   }
 
 
@@ -104,11 +105,11 @@ class Main {
   }
 
   probarPedido() {
-    console.log(this.pedido.getResumen());
-    console.log(this.pedido.getNumeroElementos());
-    console.log(this.pedido.getNumeroProductos());
-    console.log(this.pedido.getCostoTotal());
-    this.pedido.listarElementos();
+    console.log(this.pedido1.getResumen());
+    console.log(this.pedido2.getNumeroElementos());
+    console.log(this.pedido3.getNumeroProductos());
+    console.log(this.pedido1.getCostoTotal());
+    this.pedido2.listarElementos();
   }
   probarRestaurante() {
     let res_1 = {
@@ -122,14 +123,16 @@ class Main {
     console.log(this.restaurante.registrarPedido(this.pedido2))
     console.log(this.restaurante.registrarPedido(this.pedido3))
     this.restaurante.listarPedido()
-  
-    
+    console.log(this.restaurante.eliminarPedido(this.pedido3))
+    this.restaurante.listarPedido()
+    console.log(this.restaurante.actualizarPedido(this.pedido2, this.pedido3))
+    this.restaurante.listarPedido()
   }
 }
 
 let app = new Main();
 app.probarRestaurante()
-/*
+
 app.probarFecha();
 app.probarTiempo();
 app.probarDireccion();
@@ -138,4 +141,3 @@ app.probarProducto();
 app.probarElementoPedido();
 app.probarCliente();
 app.probarPedido();
-*/

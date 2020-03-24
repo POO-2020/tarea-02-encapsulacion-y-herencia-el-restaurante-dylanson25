@@ -28,10 +28,8 @@ export default class Restaurante {
 
     if (indice < 0) return false;
 
-
     this._pedidos.splice(indice, 1);
-
-    return true;
+    return `Pedido eliminado`;
   }
   actualizarPedido(pedido, nuevoPedido) {
     let indice = this.buscarPedido(pedido);
@@ -41,7 +39,7 @@ export default class Restaurante {
 
     this._pedidos.splice(indice, 1, nuevoPedido);
 
-    return true;
+    return `Pedido actualizado`;
   }
   buscarPedido(pedido) {
     let resultado = this._pedidos.findIndex(e => e.esIgualA(pedido));
